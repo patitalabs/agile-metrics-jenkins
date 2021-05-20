@@ -1,0 +1,78 @@
+openapi: 3.0.1
+info:
+  title: Agile Metrics Jenkins
+  description: ''
+  version: 1.0.0
+tags:
+  - name: metrics
+    description: Agile Metrics Jenkins
+paths:
+  /metrics/:
+    put:
+      tags:
+        - metrics
+      summary: Update existing metric entries pulled from jenkins
+      operationId: updateMetrics
+      requestBody:
+        description: Update existing metric entries pulled from jenkins
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/JenkinsConfigRequest'
+        required: true
+      responses:
+        200:
+          description: OK
+          content:
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+        405:
+          description: Validation exception
+          content: {}
+    post:
+      tags:
+        - metrics
+      summary: Add metric entries pulled from jenkins
+      operationId: addMetrics
+      requestBody:
+        description:  Add metric entries pulled from jenkins
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/JenkinsConfigRequest'
+        required: true
+      responses:
+        200:
+          description: OK
+          content:
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+        405:
+          description: Invalid input
+          content: {}
+
+
+components:
+  schemas:
+    JenkinsConfigRequest:
+      type: object
+      properties:
+        config:
+          type: object
+          properties:
+            teamName:
+              type: string
+            orgName:
+              type: string
+            projectName:
+              type: string
+            since:
+              type: string
+              format: date
+    ApiResponse:
+      type: object
+      properties:
+        status:
+          type: string

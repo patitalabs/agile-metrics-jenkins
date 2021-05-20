@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  agile-metrics-jenkins:
+    image: agile-metrics-jenkins
+    security_opt:
+      - seccomp:unconfined
+    ports:
+      - "3001:3001"
+    environment:
+      - NODE_ENV=production
+      - PORT=3001
+      - JENKINS_HOST=TBD_JENKINS_HOST
+      - JENKINS_USER=TBD_JENKINS_USER
+      - JENKINS_API_TOKEN=TBD_JENKINS_API_TOKEN
+      - CORE_METRICS_URL=TBD_CORE_METRICS_URL
