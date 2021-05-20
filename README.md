@@ -16,4 +16,4 @@ Please refer to docker-compose.yml file
 
 [Swagger](https://petstore.swagger.io/?url=https://raw.githubusercontent.com/patitalabs/agile-metrics-jenkins/main/src/api/resources/agile-metrics-jenkins-open-api.yml)
 or in ```http://localhost:3001/ ```
-![alt tag](https://raw.githubusercontent.com/patitalabs/agile-metrics-jenkins/main/screenshots/metrics-api-1.png) 
+![alt tag](https://raw.githubusercontent.com/patitalabs/agile-metrics-jenkins/main/screenshots/agile-metrics-tools-1.png) 
