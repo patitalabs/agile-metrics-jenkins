@@ -1,6 +1,6 @@
 import { JenkinsCollectorsService } from './JenkinsCollectorsService';
 import { JenkinsJob, JenkinsService } from '../Types';
-import {CiCollectorConfig} from "../../../domain/continuous-integration/Types";
+import { CiCollectorConfig } from '../../../domain/continuous-integration/Types';
 
 function testJenkinsJob(): JenkinsJob {
   return {
@@ -30,20 +30,17 @@ describe('JenkinsCollectorsService', () => {
     ): Promise<JenkinsJob> => Promise.resolve(testJenkinsJob()),
   };
 
-  const jenkinsCollectorsService: JenkinsCollectorsService = new JenkinsCollectorsService(
-    jenkinsService
-  );
+  const jenkinsCollectorsService: JenkinsCollectorsService =
+    new JenkinsCollectorsService(jenkinsService);
 
   it('should fetch jenkinsMetrics', async () => {
-    const ciCollectorConfig: CiCollectorConfig = new CiCollectorConfig(
-      {
-        orgName: 'orgName',
-        teamName: 'someTeamName',
-        projectName: 'projectName',
-        since: '2018-11-20',
-        until: '2020-11-20',
-      }
-    );
+    const ciCollectorConfig: CiCollectorConfig = new CiCollectorConfig({
+      orgName: 'orgName',
+      teamName: 'someTeamName',
+      projectName: 'projectName',
+      since: '2018-11-20',
+      until: '2020-11-20',
+    });
 
     const data = await jenkinsCollectorsService.fetch(ciCollectorConfig);
     expect(data).toMatchSnapshot();

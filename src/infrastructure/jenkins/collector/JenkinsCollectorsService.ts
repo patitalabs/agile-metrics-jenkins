@@ -1,6 +1,9 @@
 import { JenkinsMetricConverter } from './JenkinsMetricConverter';
 import { JenkinsService } from '../Types';
-import {CiCollectorConfig, CiMetricItem} from "../../../domain/continuous-integration/Types";
+import {
+  CiCollectorConfig,
+  CiMetricItem,
+} from '../../../domain/continuous-integration/Types';
 
 export class JenkinsCollectorsService {
   constructor(private readonly jenkinsService: JenkinsService) {}

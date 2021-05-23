@@ -5,7 +5,7 @@ import {
   JenkinsRepository,
 } from './Types';
 import { Converters } from './Converters';
-import {Utils} from "../../utils/Utils";
+import { Utils } from '../../utils/Utils';
 
 export class JenkinsRepositoryImpl implements JenkinsRepository {
   constructor(private readonly jenkinsClient: JenkinsClient) {}

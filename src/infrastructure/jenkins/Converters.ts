@@ -1,5 +1,5 @@
 import { JenkinsBuild, JenkinsJob } from './Types';
-import {Utils} from "../../utils/Utils";
+import { Utils } from '../../utils/Utils';
 
 export class Converters {
   static toJenkinsJob(jobDetails, builds): JenkinsJob {

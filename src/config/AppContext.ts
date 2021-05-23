@@ -2,11 +2,11 @@ import { CoreMetricsClientImpl } from '../infrastructure/core-metrics/CoreMetric
 import { AppConfig } from './AppConfig';
 import { CoreMetricsService, CiCollectorService } from '../domain/Types';
 import { ApiMetricsService } from '../domain/continuous-integration/ApiMetricsService';
-import {JenkinsService} from "../infrastructure/jenkins/Types";
-import {JenkinsClientImpl} from "../infrastructure/jenkins/JenkinsClientImpl";
-import {JenkinsRepositoryImpl} from "../infrastructure/jenkins/JenkinsRepositoryImpl";
-import {JenkinsServiceImpl} from "../infrastructure/jenkins/JenkinsServiceImpl";
-import {JenkinsCollectorsService} from "../infrastructure/jenkins/collector/JenkinsCollectorsService";
+import { JenkinsService } from '../infrastructure/jenkins/Types';
+import { JenkinsClientImpl } from '../infrastructure/jenkins/JenkinsClientImpl';
+import { JenkinsRepositoryImpl } from '../infrastructure/jenkins/JenkinsRepositoryImpl';
+import { JenkinsServiceImpl } from '../infrastructure/jenkins/JenkinsServiceImpl';
+import { JenkinsCollectorsService } from '../infrastructure/jenkins/collector/JenkinsCollectorsService';
 
 function coreMetricsService(): CoreMetricsService {
   return new CoreMetricsClientImpl({
@@ -17,7 +17,6 @@ function coreMetricsService(): CoreMetricsService {
 function scmCollectorService(): CiCollectorService {
   return new JenkinsCollectorsService(jenkinsService());
 }
-
 
 function jenkinsService(): JenkinsService {
   const jenkinsClient = new JenkinsClientImpl({

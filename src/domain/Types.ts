@@ -1,4 +1,7 @@
-import {CiCollectorConfig, CiMetricItem} from "./continuous-integration/Types";
+import {
+  CiCollectorConfig,
+  CiMetricItem,
+} from './continuous-integration/Types';
 
 export interface TeamMetricsRequest {
   shouldUpdateEntries: boolean;

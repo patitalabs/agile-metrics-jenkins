@@ -1,6 +1,9 @@
 import { JenkinsJob } from '../Types';
-import {CiCollectorConfig, CiMetricItem} from "../../../domain/continuous-integration/Types";
-import {Utils} from "../../../utils/Utils";
+import {
+  CiCollectorConfig,
+  CiMetricItem,
+} from '../../../domain/continuous-integration/Types';
+import { Utils } from '../../../utils/Utils';
 
 export class JenkinsMetricConverter {
   static toMetricItem(
@@ -26,7 +29,7 @@ export class JenkinsMetricConverter {
     }));
   }
 
-  private static msToSeconds(ms) {
+  private static msToSeconds(ms): number {
     return ms / 1000;
   }
 }

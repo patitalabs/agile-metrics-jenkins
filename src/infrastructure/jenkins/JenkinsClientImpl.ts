@@ -1,6 +1,6 @@
 import fetch from 'node-fetch';
 import { JenkinsClient } from './Types';
-import {Utils} from "../../utils/Utils";
+import { Utils } from '../../utils/Utils';
 
 export class JenkinsClientImpl implements JenkinsClient {
   private readonly host: string;

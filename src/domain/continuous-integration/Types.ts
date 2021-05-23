@@ -1,4 +1,3 @@
-
 export interface CiMetricItem {
   jenkinsUrl: string;
   buildName: string;
@@ -11,7 +10,7 @@ export interface CiMetricItem {
   projectName: string;
 }
 
-export class CiCollectorConfig  {
+export class CiCollectorConfig {
   orgName: string;
   projectName: string;
   teamName: string;
