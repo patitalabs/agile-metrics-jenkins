@@ -1,7 +1,7 @@
 import { CoreMetricsClientImpl } from '../infrastructure/core-metrics/CoreMetricsClientImpl';
 import { AppConfig } from './AppConfig';
 import { CoreMetricsService, CiCollectorService } from '../domain/Types';
-import { ApiMetricsService } from '../domain/ci/ApiMetricsService';
+import { ApiMetricsService } from '../domain/continuous-integration/ApiMetricsService';
 import {JenkinsService} from "../infrastructure/jenkins/Types";
 import {JenkinsClientImpl} from "../infrastructure/jenkins/JenkinsClientImpl";
 import {JenkinsRepositoryImpl} from "../infrastructure/jenkins/JenkinsRepositoryImpl";

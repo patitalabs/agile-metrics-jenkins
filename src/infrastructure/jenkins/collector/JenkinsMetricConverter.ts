@@ -1,5 +1,5 @@
 import { JenkinsJob } from '../Types';
-import {CiCollectorConfig, CiMetricItem} from "../../../domain/ci/Types";
+import {CiCollectorConfig, CiMetricItem} from "../../../domain/continuous-integration/Types";
 import {Utils} from "../../../utils/Utils";
 
 export class JenkinsMetricConverter {

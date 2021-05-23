@@ -1,6 +1,6 @@
 import { JenkinsCollectorsService } from './JenkinsCollectorsService';
 import { JenkinsJob, JenkinsService } from '../Types';
-import {CiCollectorConfig} from "../../../domain/ci/Types";
+import {CiCollectorConfig} from "../../../domain/continuous-integration/Types";
 
 function testJenkinsJob(): JenkinsJob {
   return {
