@@ -1,7 +1,5 @@
 import * as crypto from "crypto";
 
-const INIT_VECTOR = 'someSecret';
-
 export class Utils {
 
   static flatMap(func, arr) {
@@ -14,7 +12,7 @@ export class Utils {
 
   static toHash(theText: string): string {
     return crypto
-        .createHmac('sha256', INIT_VECTOR)
+        .createHash('sha256')
         .update(theText)
         .digest('hex');
   }
