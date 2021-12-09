@@ -1,7 +1,6 @@
-import * as crypto from "crypto";
+import * as crypto from 'crypto';
 
 export class Utils {
-
   static flatMap(func, arr) {
     return arr.map(func).reduce((x, y) => Utils.concat(x, y), []);
   }
@@ -11,17 +10,14 @@ export class Utils {
   }
 
   static toHash(theText: string): string {
-    return crypto
-        .createHash('sha512')
-        .update(theText)
-        .digest('hex');
+    return crypto.createHash('sha512').update(theText).digest('hex');
   }
 
   static isDateInRange({
-                         createdAt,
-                         since,
-                         until,
-                       }: {
+    createdAt,
+    since,
+    until,
+  }: {
     createdAt: Date;
     since: Date;
     until?: Date;

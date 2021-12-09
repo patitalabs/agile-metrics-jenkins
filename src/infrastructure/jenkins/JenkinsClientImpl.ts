@@ -1,5 +1,5 @@
-import fetch from 'node-fetch';
 import { JenkinsClient } from './Types';
+import * as axios from 'axios';
 import { Utils } from '../../utils/Utils';
 
 export class JenkinsClientImpl implements JenkinsClient {
@@ -18,14 +18,16 @@ export class JenkinsClientImpl implements JenkinsClient {
     const authToken = Utils.toBase64(`${this.apiUser}:${this.apiToken}`);
 
     const config = {
-      method: 'get',
       headers: {
         'Content-Type': 'application/json',
         Authorization: `Basic ${authToken}`,
       },
     };
 
-    const response = await fetch(fullUrl, config);
-    return response.json();
+    const response = await axios.default.get(fullUrl, config);
+    const json = response.data;
+    if (json.errors) {
+      throw new Error(...json.errors);
+    }
   }
 }
